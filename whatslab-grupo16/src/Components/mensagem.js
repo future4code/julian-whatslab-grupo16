@@ -1,4 +1,54 @@
 import React from 'react';
+import styled from 'styled-components';
+
+
+
+const MensagemStyled = styled.div`
+width: 60%;
+height: 20px;
+background-color: #fff; 
+position: relative;
+top: 10vh;
+margin: auto;
+border-radius: 20px
+`
+
+const BotaoEnviar = styled.button`
+    border: none;
+    border-radius: 20px;
+    width: 80px;
+    height: 40px;
+    background: #13DA1C;
+    color: #fff;
+    font-size: 20px;
+    position: fixed;
+    bottom: 100px;
+    right: 420px
+    
+    
+`
+
+const InputEnviarNome = styled.input`
+border: none;
+position: fixed;
+bottom: 100px;
+left: 420px;
+border-radius: 20px;
+width: 120px;
+height: 35px;
+`
+
+const InputEnviarTexto = styled.input`
+position: fixed;
+bottom: 100px;
+right: 520px;
+border-radius: 20px;
+width: 200px;
+height: 35px;
+border: none;
+`
+
+
 
 export class Mensagem extends React.Component{
 
@@ -41,10 +91,14 @@ onChangenputMensagem = (event) =>{
 render(){
     const listaMensagem=this.state.mensagem.map((msg) =>{
         return(
-            <p>
-                {msg.usuario}:
+            <MensagemStyled>
+                <p>
+                {msg.usuario}
+                </p>
+                <p>
                 {msg.mensagemUsuario}
-            </p>
+                </p>
+            </MensagemStyled>
         )
     });
 
@@ -53,15 +107,15 @@ render(){
             <div>
                 {listaMensagem}
             </div>
-            <input onChange={this.onChangenputUsuario}
+            <InputEnviarNome onChange={this.onChangenputUsuario}
                 value={this.state.valorInputUsuario}
                 placeholder={"Usuário"}/>
             
-            <input onChange={this.onChangenputMensagem}
+            <InputEnviarTexto onChange={this.onChangenputMensagem}
                 value={this.state.valorInputMensagem}
                 placeholder={"Mensagem"}/>
 
-            <button onClick={this.envioMensagem}> Enviar </button>
+            <BotaoEnviar onClick={this.envioMensagem}> Enviar </BotaoEnviar>
 
         </div>    
 
