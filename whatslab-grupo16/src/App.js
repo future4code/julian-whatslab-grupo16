@@ -9,7 +9,11 @@ import {Mensagem} from './Components/Mensagem.js';
     position: relative;
     top: 10vh;
     margin: auto;
-    border-radius: 20px
+    border-radius: 20px;
+
+    @media screen and (max-width: 375px;){
+      width: 100%;
+    }
   `
 
 
