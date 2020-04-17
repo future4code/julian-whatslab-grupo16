@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Mensagem} from './Components/Mensagem.js';
-import arrow from './arrow-left.svg'
 
   const Tela = styled.div`
     width: 40vw;

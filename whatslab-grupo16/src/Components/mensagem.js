@@ -3,13 +3,15 @@ import styled from 'styled-components';
 
 
 
-const MensagemStyled = styled.div`
+const MensagemStyled = styled.p`
 width: 60%;
 height: 20px;
+padding: 30px;
 background-color: #fff; 
 position: relative;
 top: 10vh;
 margin: auto;
+margin-bottom: 20px;
 border-radius: 20px
 `
 
@@ -61,8 +63,8 @@ export class Mensagem extends React.Component{
             }
         ],
 
-        valorInputUsuario:"",
-        valorInputMensagem:""
+        valorInputUsuario:"  ",
+        valorInputMensagem:"  "
 }
 
     envioMensagem=()=>{
@@ -91,14 +93,9 @@ onChangenputMensagem = (event) =>{
 render(){
     const listaMensagem=this.state.mensagem.map((msg) =>{
         return(
-            <MensagemStyled>
-                <p>
-                {msg.usuario}
-                </p>
-                <p>
-                {msg.mensagemUsuario}
-                </p>
-            </MensagemStyled>
+            <div>
+                <MensagemStyled>{msg.usuario}   {msg.mensagemUsuario}</MensagemStyled>
+            </div>
         )
     });
 
