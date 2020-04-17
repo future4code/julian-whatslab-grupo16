@@ -1,31 +1,41 @@
 import React from 'react';
 
-export class mensagem extends React.Component{
+export class Mensagem extends React.Component{
 
     state={
 
         mensagem:[
-            {}
+            {
+                nome: '',
+                texto: ''
+            }
         ],
 
-valorInputUsuario:"",
-valorInputMensagem:""
-    }
+        valorInputUsuario:"",
+        valorInputMensagem:""
+}
 
     envioMensagem=()=>{
         const mensagemNova={
             usuario:this.state.valorInputUsuario,
             mensagemUsuario:this.state.valorInputMensagem
         }
-        const mensagemNova=[
-            ...this.state.mensagem,mensagemNova
+        const mensagemAtualizada=[...this.state.mensagem,mensagemNova
         ];
+
+
+
+        this.setState({mensagem:mensagemAtualizada})
     }
-        this.setState({mensagem:mensagemNova})
+       
    
-}
+
 onChangenputUsuario=(event)=>{
     this.setState({valorInputUsuario:event.target.value});
+}
+
+onChangenputMensagem = (event) =>{
+    this.setState({valorInputMensagem: event.target.value});
 }
 
 render(){
@@ -56,4 +66,4 @@ render(){
         </div>    
 
     );
-}
+    }}

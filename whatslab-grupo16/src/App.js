@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {mensagem} from './Components/mensagem.js';
+import {Mensagem} from './Components/Mensagem.js';
 
 
 class App extends React.Component{
@@ -9,7 +9,7 @@ class App extends React.Component{
 
       return(
         <div>
-        <mensagem/>
+        <Mensagem/>
         
         </div>
       );
