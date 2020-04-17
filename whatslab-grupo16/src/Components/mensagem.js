@@ -1,7 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const ContainerMensagem = styled.div`
+margin: 0;
+padding: 0;
+width: 60%;
+height: 20px;
+background-color: #fff;
 
+`
 
 const MensagemStyled = styled.p`
 width: 60%;
@@ -94,16 +101,17 @@ render(){
     const listaMensagem=this.state.mensagem.map((msg) =>{
         return(
             <div>
-                <MensagemStyled>{msg.usuario}   {msg.mensagemUsuario}</MensagemStyled>
+                <div>{msg.usuario}   {msg.mensagemUsuario}</div>
             </div>
         )
     });
 
     return(
         <div>
-            <div>
+            <ContainerMensagem>
                 {listaMensagem}
-            </div>
+            </ContainerMensagem>
+            
             <InputEnviarNome onChange={this.onChangenputUsuario}
                 value={this.state.valorInputUsuario}
                 placeholder={"Usuário"}/>
